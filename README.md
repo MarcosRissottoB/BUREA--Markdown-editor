@@ -1,17 +1,17 @@
 # BUREA
 
-# requirements
+## requirements
 
-node
+  node
 
-# install dependencies
+## install dependencies
 
-npm install
+  npm install
 
-# run production
+## run production
 
-npm start
+  npm start
 
-# run development
+## run development
 
-npm run dev
+  npm run dev
