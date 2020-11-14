@@ -1,17 +1,29 @@
-# BUREA
+# BUREA - Markdown Editor
 
-# requirements
+Burea - markeditor is a markdown editor build with node, express, mongoose and ejs
 
-node
+## Requirements
 
-# install dependencies
+- node
 
+## Installation dependencies
+
+Use the package manager [npm](https://www.npmjs.com/) to install Burea - markeditor.
+
+```bash
 npm install
+```
 
-# run production
+## run production
+
+```bash
+npm start
+```
 
 npm start
 
-# run development
+## run development
 
+```bash
 npm run dev
+```
