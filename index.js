@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
       description: 'Example description 2'
       }
   ]
-  res.render('index', {notes});
+  res.render('notes/index', {notes});
 })
 
 app.listen(port, () => {

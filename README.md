@@ -4,7 +4,7 @@ Burea - markeditor is a markdown editor build with node, express, mongoose and e
 
 ## Requirements
 
-- node
+- node (https://nodejs.org)
 
 ## Installation dependencies
 

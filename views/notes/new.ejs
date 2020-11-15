@@ -9,25 +9,10 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="mb-2">BUREA - MARKDOWN EDITOR</h1>
-    <a href="/notes" class="btn btn-light">
-      New Note
-    </a>
-    <% notes.forEach( note =>  { %>
-      <div class="card mt-2">
-        <div class="body">
-          <h4 class="card-title">
-            <%= note.title %>
-          </h4>
-          <div class="card-subtitle text-muted mb-1">
-            <%= note.createdAt.toLocaleDateString() %>
-          </div>
-          <div class="card-text mb-2">
-            <%= note.description %>
-          </div>
-        </div>
-      </div>
-    <% })%>
+    <h1 class="mb-2">New Note</h1>
+    <form action="/notes" method="POST">
+      <%- include('_form_fields') %>
+    </form>
   </div>
 </body>
 </html>
