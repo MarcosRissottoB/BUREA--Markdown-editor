@@ -37,3 +37,17 @@ npm run dev
 ## Video: explanatory video on how to use the app
 
 https://drive.google.com/file/d/1LsxpVXHcL3bWtidO8VosQ62ZUlV7ZQWZ/view?usp=sharing
+
+## Run Docker
+
+- Build node image
+
+```bash
+docker build -t markdown-editor-node .
+```
+
+- Run container
+
+```bash
+docker run -p 5000:5000 markdown-editor-node
+```
