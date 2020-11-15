@@ -23,6 +23,7 @@
             <%= note.createdAt.toLocaleDateString() %>
           </div>
           <a href="notes/<%= note.slug %>" class="btn btn-link float-left">Show Note</a>
+          <a href="notes/edit/<%= note.id %>" class="btn btn-info">Edit Note</a>
           <form action="/notes/<%= note.id %>?_method=DELETE" method="POST" class="d-inline">
             <button type="submit" class="btn btn-secondary">Remove</button>
           </form>

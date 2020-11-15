@@ -13,7 +13,9 @@ router.get('/new', (req, res) => {
   res.render('notes/new', {note: new Note()});
 })
 
-router.put('/edit/:id', NoteController.update);
+router.get('/edit/:id', NoteController.editFindOne);
+
+router.put('/:id', NoteController.update);
 
 router.get('/:slug', NoteController.findOne);
 

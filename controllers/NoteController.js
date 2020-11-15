@@ -32,6 +32,18 @@ const findOne = async (req, res, next) => {
   }
 }
 
+const editFindOne = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const note = await Note.findById(id);
+    if (!note) res.redirect('/');
+    res.render('notes/edit', {note});
+    next();
+  } catch (err) {
+    console.log(err);
+    res.redirect('/');
+  }
+}
 const findAll = async (req, res, next) => {
   try {
     let notes = await Note.find().sort({
@@ -56,7 +68,7 @@ const update = async (req, res, next) => {
     createdAt
   });
   try {
-    const note = await Note.findById(id);
+    let note = await Note.findById(id);
     if (!note) res.redirect('notes/new',{note})
       note = newNote;
       await newNote.save();
@@ -84,5 +96,6 @@ module.exports = {
   findOne,
   findAll,
   update,
+  editFindOne,
   remove
 };
