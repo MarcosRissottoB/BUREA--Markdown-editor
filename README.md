@@ -33,3 +33,7 @@ npm run dev
 - Read/remove: Click on show more to read content or delete to remove note.
 - Create new note, press button "New note", and add title and description (is required), then press Create.
 - Edit note: Click "show more" in the note and then press "edit" for change the content.
+
+## Video: explanatory video on how to use the app
+
+https://drive.google.com/file/d/1LsxpVXHcL3bWtidO8VosQ62ZUlV7ZQWZ/view?usp=sharing
