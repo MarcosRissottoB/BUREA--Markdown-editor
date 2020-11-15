@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 const noteRouter = require('./routes/notes');
 
@@ -18,6 +19,7 @@ app.set('view engine', 'ejs');
 
 // Config
 app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 app.use('/notes', noteRouter);
 
 // Initial dump db with thow notes
@@ -49,7 +51,8 @@ app.get('/', async (req, res) => {
 mongoose.connect(connection,
    { 
      useNewUrlParser: true,
-     useUnifiedTopology: true
+     useUnifiedTopology: true,
+     useCreateIndex: true
     }, (err, res) => {
   if(err){
     throw err;

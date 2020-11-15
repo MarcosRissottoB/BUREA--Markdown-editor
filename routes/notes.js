@@ -8,16 +8,17 @@ const NoteController = require('../controllers/NoteController');
 const Note = require('../models/note');
 
 router.get('/', NoteController.findAll);
-// (req, res) => {
-//   res.send('notes');
-// })
 
 router.get('/new', (req, res) => {
   res.render('notes/new', {note: new Note()});
 })
 
-router.get('/:id', NoteController.findById);
+router.put('/edit/:id', NoteController.update);
+
+router.get('/:slug', NoteController.findOne);
 
 router.post('/', NoteController.create);
+
+router.delete('/:id', NoteController.remove);
 
 module.exports = router;
