@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 const noteRouter = require('./routes/notes');
 
+// Models
+const Note = require('./models/note');
 // Environments
 require('dotenv').config()
 const port = process.env.PORT || 5000;
@@ -18,20 +20,28 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 app.use('/notes', noteRouter);
 
-// Routes
-app.get('/', (req, res) => {
-  const notes = [
-    {
-    title: 'Test note',
+// Initial dump db with thow notes
+const notesDump = () =>  [
+  {
+  title: 'Test note',
+  createdAt: new Date(),
+  description: 'Example description'
+  },
+  {
+    title: 'Test note 2',
     createdAt: new Date(),
-    description: 'Example description'
-    },
-    {
-      title: 'Test note 2',
-      createdAt: new Date(),
-      description: 'Example description 2'
-      }
-  ]
+    description: 'Example description 2'
+  }
+];
+
+// Routes
+app.get('/', async (req, res) => {
+  const notes = await Note.find().sort({
+    createdAt: 'desc'
+  });
+  if (!notes) {
+    notes = notesDump();
+  }
   res.render('notes/index', {notes});
 })
 
