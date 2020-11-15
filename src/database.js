@@ -12,4 +12,4 @@ mongoose.connect(connection,
    }
 )
 .then(db => console.log(`Db is connected`))
-.catch(err => console.err(err));
+.catch(err => console.log(err));
