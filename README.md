@@ -38,16 +38,19 @@ npm run dev
 
 https://drive.google.com/file/d/1LsxpVXHcL3bWtidO8VosQ62ZUlV7ZQWZ/view?usp=sharing
 
+# Docker
+
+## Requirements
+
+- docker (https://www.docker.com/get-started)
+- compose (https://docs.docker.com/compose/install/)
+
 ## Run Docker
 
-- Build node image
-
 ```bash
-docker build -t markdown-editor-node .
+docker-compose build
 ```
 
-- Run container
-
 ```bash
-docker run -p 5000:5000 markdown-editor-node
+docker-compose up
 ```
